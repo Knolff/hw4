@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Sales</title>
+    <!--CSS-->
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
-
 <body>
+    <!--Logo and website title-->
     <div class="header">
         <div class="logo-left">
         <img src="./images/car-logo.jpg" alt="Used Cars" class="car-logo">
@@ -18,14 +18,17 @@
         <h1>Used Car Sales</h1>
         </div>
     </div>
+    <!--Containter for everything below header-->
     <div class="container">
-        
+        <!--Filter container-->
         <div class="filterContainer">
             <h2>Filter:</h2>
+            <!--Min and max year-->
             <label for="minYear">Minimum Year:</label>
             <input type="number" id="minYear" />
             <label for="maxYear">Maximum Year:</label>
             <input type="number" id="maxYear" />
+            <!--Car make-->
             <label for="carMake">Car Make:</label>
             <select id="carMake">
                 <option value="">All Makes</option>
@@ -45,10 +48,12 @@
                 <option value="Porche">Porche</option>
                 <option value="Lexus">Lexus</option>
             </select>
+            <!--Max mileage-->
             <div class="mileage">
             <label for="maxMileage">Maximum Mileage (in miles):</label>
             </div>
             <input type="number" id="maxMileage" />
+            <!--Car color-->
             <label for="carColor">Car Color:</label>
             <select id="carColor" multiple>
                 <option value="">All Colors</option>
@@ -60,14 +65,15 @@
                 <option value="Green">Green</option>
             </select>
             <br/>
+            <!--Apply filter button-->
             <button id="applyFiltersBtn">Apply Filters</button>
         </div>
-
+        <!--No results if not matched-->
         <div class="no-results-container" id="noResultsContainer"></div>
-        <div class="usedCarContainer" id="cargrid"></div>
-        
+        <!--Container for all cars-->
+        <div class="usedCarList" id="cargrid"></div>
     </div>
 </body>
+<!--Javascript file-->
 <script type="module" src="./js/app.js" defer></script>
-
 </html>

@@ -2,7 +2,7 @@ import usedCars from "./usedCars.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get references to the elements
-  const usedCarsContainer = document.getElementById("cargrid");
+  const usedCarsList = document.getElementById("cargrid");
   const minYearInput = document.getElementById("minYear");
   const maxYearInput = document.getElementById("maxYear");
   const carMakeInput = document.getElementById("carMake");
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedColor = carColorInput.value || "Any";
 
     // Clear the existings car list
-    while (usedCarsContainer.firstChild) {
-      usedCarsContainer.removeChild(usedCarsContainer.firstChild);
+    while (usedCarsList.firstChild) {
+      usedCarsList.removeChild(usedCarsList.firstChild);
     }
     // Flag to indicate if any cars were found
     let foundCars = false;
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         (selectedMake === "Any" || car.make === selectedMake) &&
         (selectedColor === "Any" || car.color === selectedColor)
       ) {
-        const carComponent = createCarComponent(car);
-        usedCarsContainer.appendChild(carComponent);
+        const carList = createCarList(car);
+        usedCarsList.appendChild(carList);
         //set flag to true if any cars are found
         foundCars = true;
       }
@@ -43,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!foundCars) {
       const noResultsMessage = document.createElement("div");
       noResultsMessage.className = "no-results-message";
-      noResultsMessage.textContent = "No cars match the selected filters.";
-      usedCarsContainer.appendChild(noResultsMessage);
+      noResultsMessage.textContent = "No cars match the selected filters. Please try again";
+      usedCarsList.appendChild(noResultsMessage);
     }
   });
   // Function to create a car component
-  function createCarComponent(car) {
+  function createCarList(car) {
     const card = document.createElement("div");
-    card.className = "carcard";
+    card.className = "carlist";
     card.innerHTML = `
         <img src="${car.image}" alt="${car.make} ${car.model} Image">
         <hr>
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to render all cars
   function renderAllCars() {
     usedCars.forEach((car) => {
-      const carComponent = createCarComponent(car);
-      usedCarsContainer.appendChild(carComponent);
+      const carList = createCarList(car);
+      usedCarsList.appendChild(carList);
     });
   }
 
