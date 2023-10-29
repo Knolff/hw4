@@ -1,0 +1,73 @@
+#cargrid {
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #133f6c;
+  flex-shrink: 3;
+  flex-flow: space-between;
+  align-items: stretch;
+  margin-left: 0px;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.carcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  margin: 10px;
+}
+
+.carcard img {
+  width: 70%;
+  height: 33%;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ebeef1;
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header {
+  background-color: #133f6c;
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+.logo-left {
+  position: relative;
+}
+.text-right {
+  position: relative;
+  left: 100px;
+}
+
+.car-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.no-results-message {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}

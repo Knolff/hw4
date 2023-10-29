@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-left">
+        <img src="./images/car-logo.jpg" alt="Used Cars" class="car-logo">
+        </div>
+        <div class="text-right">
+        <h1>Used Car Sales</h1>
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="filterContainer">
+            <h2>Filter:</h2>
+            <label for="minYear">Minimum Year:</label>
+            <input type="number" id="minYear" />
+            <label for="maxYear">Maximum Year:</label>
+            <input type="number" id="maxYear" />
+            <label for="carMake">Car Make:</label>
+            <select id="carMake">
+                <option value="">All Makes</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Kia">Kia</option>
+                <option value="Dodge">Dodge</option>
+                <option value="BMW">BMW</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Porche">Porche</option>
+                <option value="Lexus">Lexus</option>
+            </select>
+            <div class="mileage">
+            <label for="maxMileage">Maximum Mileage (in miles):</label>
+            </div>
+            <input type="number" id="maxMileage" />
+            <label for="carColor">Car Color:</label>
+            <select id="carColor" multiple>
+                <option value="">All Colors</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+            <br/>
+            <button id="applyFiltersBtn">Apply Filters</button>
+        </div>
+
+        <div class="no-results-container" id="noResultsContainer"></div>
+        <div class="usedCarContainer" id="cargrid"></div>
+        
+    </div>
+</body>
+<script type="module" src="./js/app.js" defer></script>
+
+</html>
